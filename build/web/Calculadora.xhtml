@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
@@ -8,60 +9,58 @@
         <title>Calculadora Web</title>
     </h:head>
     <h:body>
-<!--        <f:view>
-            <h:form>
-                <f:facet name="header">Datos</f:facet>
-                <p:panelGrid columns="2">
-                    <p:outputLabel value="Nro. 1" />
-                    <p:inputText value="#{calculadoraC.nro1}" id="nro1"/>
-                    <p:outputLabel value="Nro. 2" />
-                    <p:inputText value="#{calculadoraC.nro2}" id="nro2"/>
-                    <p:outputLabel value="Operador" />
-                    <p:selectOneMenu value="#{calculadoraC.operador}">
-                        <f:selectItem itemValue="0" itemLabel="Seleccionar"/>
-                        <f:selectItem itemValue="+" itemLabel="Suma"/>
-                        <f:selectItem itemValue="-" itemLabel="Resta"/>
-                        <f:selectItem itemValue="*" itemLabel="Multiplicación"/>
-                        <f:selectItem itemValue="/" itemLabel="División"/>
-                    </p:selectOneMenu>
-                </p:panelGrid>
-                <p:panelGrid columns="1">
-                    <p:commandButton value="Calcular" update="resultado" action="#{calculadoraC.calcular()}" />
-                    <p:inputTextarea value="#{calculadoraC.resultado}" id="resultado" rows="5" cols="30" />
-                    <p:commandButton value="Limpiar"  action="#{calculadoraC.limpiar()}" update="nro1 nro2 resultado" />
-                </p:panelGrid>
-            </h:form>            
-        </f:view>-->
+        <h:form>  
+            <f:facet name="header">Entrada de Datos</f:facet>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Nro1" />
+                <p:inputText value="#{calculadoraC.modelo.nro1}" maxlength="8" id="nro1" />
+                <p:outputLabel value="Nro2" />
+                <p:inputText value="#{calculadoraC.modelo.nro2}" id="nro2"/>
+            </p:panelGrid>
+            <p:outputLabel value="Operador"/>
+            <p:selectOneRadio value="#{calculadoraC.modelo.operador}" unselectable="true" id="operador">
+                <f:selectItem itemLabel="Más" itemValue="+" />
+                <f:selectItem itemLabel="Menos" itemValue="-" />
+                <f:selectItem itemLabel="Multiplicar" itemValue="*" />
+                <f:selectItem itemLabel="División" itemValue="/" />
+            </p:selectOneRadio>
 
-        <!--Juan Condori-->
-        
-        <f:view>
-            <h:form>
-                <f:facet name="header">Datos</f:facet>
-                <p:panelGrid columns="2">
-                    <p:outputLabel value="Nro. 1" />
-                    <p:inputText value="#{calculadoraC.nro1}" />
-                    <p:outputLabel value="Nro. 2" />
-                    <p:inputText value="#{calculadoraC.nro2}"/>
-                    <p:outputLabel value="Operador" />                    
-                    <p:selectOneMenu value="#{calculadoraC.operador}">
-                        <f:selectItem itemValue="0" itemLabel="Seleccionar"/>
-                        <f:selectItem itemValue="+" itemLabel="Suma"/>
-                        <f:selectItem itemValue="-" itemLabel="Resta"/>
-                        <f:selectItem itemValue="*" itemLabel="Multiplicación"/>
-                        <f:selectItem itemValue="/" itemLabel="División"/>
-                    </p:selectOneMenu>
-                </p:panelGrid>
-                <p:panelGrid columns="1">
-                    <p:commandButton value="Calcular" update="resultado" action="#{calculadoraC.calcular()}" />
-                    <p:inputTextarea value="#{calculadoraC.resultado}" id="resultado" rows="5" cols="30" />
-                    <p:button value="Limpiar" />
-                </p:panelGrid>
-            </h:form>
-        </f:view>
+            <p:panelGrid columns="1">
+                <p:commandButton value="Calcular" update="resultado" action="#{calculadoraC.calcular()}"/>
+                <p:inputTextarea value="#{calculadoraC.modelo.strResultado}" id="resultado"/>
+                <p:commandButton value="Limpiar" action="#{calculadoraC.limpiar()}" update ="nro1 nro2 resultado" />
+            </p:panelGrid>
 
+
+            <!--
+            <f:view>
+                <h:form>
+                    <f:facet name="header">Entrada de Datos</f:facet>
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="Nro. 1" />
+                        <p:inputText value="#{calculadoraController.modelo.nro1}" />
+                        <p:outputLabel value="Nro. 2" />
+                        <p:inputText value="#{calculadoraController.modelo.nro2}"/>
+                        <p:outputLabel value="Operador" />                    
+                        <p:selectOneMenu value="#{calculadoraController.modelo.operador}">
+                            <f:selectItem itemValue="0" itemLabel="Seleccionar"/>
+                            <f:selectItem itemValue="+" itemLabel="Suma"/>
+                            <f:selectItem itemValue="-" itemLabel="Resta"/>
+                            <f:selectItem itemValue="*" itemLabel="Multiplicación"/>
+                            <f:selectItem itemValue="/" itemLabel="División"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:panelGrid columns="1">
+                        <p:commandButton value="Calcular" update="resultado" action="#{calculadoraController.calcular()}" />
+                        <p:inputTextarea value="#{calculadoraController.modelo.strResultado}" id="resultado" rows="5" cols="30" />
+                        <p:button value="Limpiar" />
+                    </p:panelGrid>
+                </h:form>
+            </f:view>
+
+            -->
+
+        </h:form>
     </h:body>
-
-
 </html>
 

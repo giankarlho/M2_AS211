@@ -3,62 +3,48 @@ package controller;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import model.Calculadora;
 import services.CalculadoraS;
 
 @Named(value = "calculadoraC")
 @SessionScoped
 public class CalculadoraC implements Serializable {
 
-    private int nro1;
-    private int nro2;
-    private String resultado="";
-    private char operador;
+    private Calculadora modelo;
+    private CalculadoraS servicio;
     
     public CalculadoraC() {
+        modelo = new Calculadora();
+        servicio = new CalculadoraS();
     }
-    
+
     public void calcular(){
-        resultado = CalculadoraS.calcular(nro1, operador, nro2);
-    }
-
+        servicio.calcular(modelo.getNro1(),modelo.getOperador(),modelo.getNro2());
+        modelo.setStrResultado(CalculadoraS.StrResultado);
+    } 
+    
     public void limpiar(){
-        setNro1(0);
-        setNro2(0);
-        setResultado("");
-        setOperador('0');
+        modelo = new Calculadora();
     }
     
-    public int getNro1() {
-        return nro1;
+    // Getter y Setter
+    public Calculadora getModelo() {
+        return modelo;
     }
 
-    public void setNro1(int nro1) {
-        this.nro1 = nro1;
+    public void setModelo(Calculadora modelo) {
+        this.modelo = modelo;
     }
 
-    public int getNro2() {
-        return nro2;
+    public CalculadoraS getServicio() {
+        return servicio;
     }
 
-    public void setNro2(int nro2) {
-        this.nro2 = nro2;
+    public void setServicio(CalculadoraS servicio) {
+        this.servicio = servicio;
     }
-
-    public String getResultado() {
-        return resultado;
-    }
-
-    public void setResultado(String resultado) {
-        this.resultado = resultado;
-    }
-
-    public char getOperador() {
-        return operador;
-    }
-
-    public void setOperador(char operador) {
-        this.operador = operador;
-    }
-
+    
+    
+    
     
 }
