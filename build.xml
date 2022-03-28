@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="ApliacionesWeb" default="default" basedir=".">
-    <description>Builds, tests, and runs the project ApliacionesWeb.</description>
+<project name="AppWeb_AS211S3" default="default" basedir=".">
+    <description>Builds, tests, and runs the project AppWeb_AS211S3.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
