@@ -7,7 +7,8 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class Conexion {
-        public static Connection cnx = null;
+
+    public static Connection cnx = null;
 
     public static Connection conectar() throws Exception {
 
@@ -30,15 +31,17 @@ public class Conexion {
         }
         return cnx;
     }
-    
-    public void cerrarCnx() throws Exception{
-        if(Conexion.cnx != null)
-            cnx.close();            
+
+    public void cerrarCnx() throws Exception {
+        if (Conexion.cnx != null) {
+            cnx.close();
+        }
     }
-    
+
     public static void main(String[] args) throws SQLException, Exception {
         Conexion.conectar();
-        if(Conexion.cnx != null)
-            System.out.println("Conectado"); 
+        if (Conexion.cnx != null) {
+            System.out.println("Conectado");
+        }
     }
 }
