@@ -6,19 +6,68 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Mantenimiento de Paciente</title>
     </h:head>
     <h:body>
         <h:form>
-            <p:menubar>
+            <p:panelGrid columns="2" >
+                <p:outputLabel value="Nombre" />
+                <p:inputText value="#{pacienteC.paciente.nombre}" />
+                <p:outputLabel value="Apellido" />
+                <p:inputText value="#{pacienteC.paciente.apellido}" />
+                <!--                <p:outputLabel value="Sexo" />-->
+                <p:selectOneRadio id="sexo" value="#{pacienteC.paciente.sexo}" unselectable="true">
+                    <f:selectItem itemLabel="Masculino" itemValue="M" />
+                    <f:selectItem itemLabel="Femenino" itemValue="F" />                    
+                </p:selectOneRadio>
+                <p:inputText value="#{pacienteC.paciente.sexo}" />
+                <p:outputLabel value="DNI" />
+                <p:inputText value="#{pacienteC.paciente.dni}" maxlength="8"/>
+                <p:commandButton action="#{pacienteC.listar()}" value="Listar" update="data"/>
+            </p:panelGrid>   
+
+            <p:dataTable id="data" var="paciente2" value="#{pacienteC.lstPaciente}" rowKey="#{paciente2.codigo}"
+                         rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+                         rowsPerPageTemplate="5,10,15">                       
+
+                <f:facet name="header">
+                    Listado de Pacientes
+                </f:facet>
+                <p:column headerText="Id">
+                    <h:outputText value="#{paciente2.codigo}" />
+                </p:column>
+                <p:column headerText="Nombre">
+                    <h:outputText value="#{paciente2.nombre}" />
+                </p:column>
+                <p:column headerText="Apellido">
+                    <h:outputText value="#{paciente2.apellido}" />
+                </p:column>
+                <p:column headerText="Sexo">
+                    <h:outputText value="#{paciente2.sexo}" >
+                        <f:converter converterId="sexoConverter" />
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="DNI">
+                    <h:outputText value="#{paciente2.dni}" />
+                </p:column>
+            </p:dataTable> 
+
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
+
+<!--            <p:menubar>
                 <p:submenu label="Calculadora">                    
                     <p:menuitem value="Calculadora 1" outcome="/Calculadora" /> 
                     <p:menuitem value="Calculadora 2"  />             
                 </p:submenu>
                 <p:menuitem value="Caracol" outcome="/Caracol" />
                 <p:menuitem value="Cajero" outcome="/Cajero" />
-            </p:menubar>
-        </h:form>
-    </h:body>
-</html>
-
+            </p:menubar>-->
