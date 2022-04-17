@@ -1,8 +1,8 @@
 package model;
 
-import java.sql.Date;
+import java.util.Date;
 
-public class Paciente{
+public class Paciente {
 
     private int codigo;
     private String nombre;
@@ -16,9 +16,22 @@ public class Paciente{
     private String dirreccion;
     private String grupo;
     private String estado;
-    
-// Getter y Setter
 
+    public void clear() {
+        codigo = 0;
+        nombre = null;
+        apellido = null;
+        fecha = null;
+        dni = null;
+        movil = null;
+        correo = null;
+        ubigeo = null;
+        dirreccion = null;
+    }
+
+// Getter y Setter
+    
+    
     public int getCodigo() {
         return codigo;
     }
@@ -114,9 +127,6 @@ public class Paciente{
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
+
 
 }
-
-
