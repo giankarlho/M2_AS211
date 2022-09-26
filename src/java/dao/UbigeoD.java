@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UbigeoD {
-    
-     public List<String> listaDpto() throws Exception{
+
+    public List<String> listaDpto() throws Exception {
         List<String> lista = new ArrayList();
         lista.add("AMAZONAS");
         lista.add("ANCASH");
@@ -28,11 +28,11 @@ public class UbigeoD {
         lista.add("PASCO");
         lista.add("PIURA");
         lista.add("PUNO");
-        lista.add("SAN MARTIN");  
-        lista.add("TACNA");  
-        lista.add("TUMBES");  
-        lista.add("UCAYALI");  
-        return lista;        
+        lista.add("SAN MARTIN");
+        lista.add("TACNA");
+        lista.add("TUMBES");
+        lista.add("UCAYALI");
+        return lista;
     }
-    
+
 }

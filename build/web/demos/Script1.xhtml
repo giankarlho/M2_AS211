@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            div {
+                width: 200px;
+                height: 50px;
+                background-color: chocolate;
+                text-align: center;
+                padding: 2%;
+                margin: 0 auto;
+                color: white;
+                border-radius: 10px;
+                box-shadow: 5px 5px 5px gray;
+                cursor: pointer;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="boton">
+            Da click en este botón
+        </div>
+        <script>
+            const boton = document.querySelector('.boton');
+            boton.addEventListener('click',function(){
+                alert("El botón se ha pulsado");
+            })
+        </script>
+    </h:body>
+</html>
+

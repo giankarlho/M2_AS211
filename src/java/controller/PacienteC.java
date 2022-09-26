@@ -27,7 +27,8 @@ public class PacienteC implements Serializable {
 
     public void registrar() throws Exception {
         try {
-            paciente.setUbigeo(dao.obtenerCodigoUbigeo1(paciente.getUbigeo()));
+//            paciente.setUbigeo(dao.obtenerCodigoUbigeo1(paciente.getUbigeo()));
+            paciente.setUbigeo(dao.obtenerCodigoUbigeo2(paciente.getUbigeo()));
             dao.guardar(paciente);
             listar();
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registrado", "Registrado con éxito"));

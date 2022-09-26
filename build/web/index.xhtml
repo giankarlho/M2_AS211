@@ -61,7 +61,7 @@
                 </p:panelGrid>   
             </h:form>
             <!--        Fin del Formulario Paciente    >-->
-
+            
             <p:spacer height="0"/>        
 
             <!--        Listado del Paciente    >-->              
@@ -132,10 +132,10 @@
                     <p:panelGrid columns="2" >
                         <p:outputLabel value="Nombre" />
                         <p:inputText value="#{pacienteC.paciente.nombre}" />
-                        
+
                         <p:outputLabel value="Apellido" />
                         <p:inputText value="#{pacienteC.paciente.apellido}" />    
-                        
+
                         <p:outputLabel value="Sexo" />
                         <p:selectOneRadio id="sexo" value="#{pacienteC.paciente.sexo}" unselectable="true">
                             <f:selectItem itemLabel="Masculino" itemValue="M" />
